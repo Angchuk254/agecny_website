@@ -1,0 +1,47 @@
+.card {
+    border: none;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+  }
+  
+  h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+  
+  h3 {
+    color: #0056b3;
+  }
+  
+  .card-body {
+    text-align: center;
+  }
+  
+  .card-img-top {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+  
+  .text-muted {
+    color: #6c757d;
+  }
+  
+  .bg-light {
+    background-color: #f8f9fa !important;
+  }
+  .bikeBend{
+    height: 200px;
+    // width: 100%;
+  }
+  @media screen and (max-width:760px){
+    .bikeBend{
+        height: auto;
+        // width: 100%;
+      }
+  }

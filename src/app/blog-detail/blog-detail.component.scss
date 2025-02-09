@@ -1,0 +1,27 @@
+.sidebar {
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .list-group-item {
+    border: none;
+    padding: 10px;
+  }
+  
+  .list-group-item a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+  }
+  
+  .list-group-item a:hover {
+    text-decoration: underline;
+  }
+  

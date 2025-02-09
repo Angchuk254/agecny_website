@@ -1,0 +1,57 @@
+<div class="container mt-md-5">
+    <div class="row">
+      
+      <!-- Blog Content (Main Section) -->
+      <div class="col-md-8 pt-3" *ngIf="blog">
+        <h2 class="text-center">{{ blog.title }}</h2>
+        <img [src]="blog.image" class="img-fluid mb-3" alt="{{ blog.title }}">
+        <p><strong>Category:</strong> {{ blog.category }}</p>
+        <p><strong>Date:</strong> {{ blog.date }}</p>
+        <p>{{ blog.content }}</p>
+        <h5>{{blog.description}}</h5>
+        <p>{{blog.descriptioPara}}</p>
+        <h5>{{blog.titleSub}}</h5>
+        <p>{{blog.titlePara}}</p>
+        <h5>{{blog.metaDesc}}</h5>
+        <p>{{blog.metaPara}}</p>
+        <h5>{{blog.topper}}</h5>
+        <p>{{blog.topperPara}}</p>
+        <h5>{{blog.megaTooper}}</h5>
+        <p>{{blog.megaPara}}</p>
+        <p class="mt-4">{{blog.giggaPara}}</p>
+      </div>
+  
+      <!-- Sidebar (Latest Blogs, Trending, Recommended Tours) -->
+      <div class="col-md-4">
+        <div class="sidebar">
+          
+          <!-- Latest Blogs -->
+          <h4>Latest Blogs</h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item" *ngFor="let latest of latestBlogs">
+              <a [routerLink]="['/blogs', latest.id]">{{ latest.title }}</a>
+            </li>
+          </ul>
+  
+          <!-- Trending Blogs -->
+          <h4>Trending Blogs</h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item" *ngFor="let trending of trendingBlogs">
+              <a [routerLink]="['/blogs', trending.id]">{{ trending.title }}</a>
+            </li>
+          </ul>
+  
+          <!-- Recommended Tours -->
+          <h4>Recommended Tours</h4>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let tour of recommendedTours">
+              <a [routerLink]="['/packages', tour.id]">{{ tour.name }}</a>
+            </li>
+          </ul>
+  
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  

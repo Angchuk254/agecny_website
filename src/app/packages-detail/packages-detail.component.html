@@ -1,0 +1,86 @@
+<div class="container mt-md-5">
+    <div *ngIf="isPackageNotFound; else packageDetail" class="text-center">
+      <h3>Package not found!</h3>
+      <p>The package you are looking for is not available.</p>
+      <a routerLink="/packages" class="btn btn-secondary">Back to Packages</a>
+    </div>
+  
+    <ng-template #packageDetail>
+      <div *ngIf="packageDetails; else loading" class="row">
+        <!-- Carousel Section for Images -->
+        <div class="col-md-6 p-0">
+          <div id="packageImagesCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div *ngFor="let image of packageDetails.images; let i = index" [ngClass]="{ 'carousel-item': true, 'active': i === 0 }">
+                <img [src]="image" class="d-block w-100" alt="{{ packageDetails.name }} image">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#packageImagesCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#packageImagesCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Package Details Section -->
+        <div class="col-md-6">
+          <div class="package-details-card p-4">
+            <h2 class="package-title">{{ packageDetails.name }}</h2>
+            <p class="package-description m-0">{{ packageDetails.description }}</p>
+            <!-- <p class="package-price"><strong>Price:</strong> {{ packageDetails.price }}</p> -->
+            <button class="btn btn-lg btn-primary book-now-btn mt-4" [routerLink]="['/contact']">Book Now</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Itinerary Section -->
+      <div class="mt-5">
+        <h3>Itinerary</h3>
+        <div *ngFor="let day of packageDetails.itinerary">
+          <h4>Day {{ day.dayNumber }}: {{ day.title }}</h4>
+          <p>{{ day.description }}</p>
+        </div>
+      </div>
+  
+      <!-- Terms and Conditions Section -->
+      <div class="mt-5">
+        <h3>Terms and Conditions</h3>
+        <ul>
+          <li>Price is per person, including all activities and meals during the trip.</li>
+          <li>Booking should be confirmed with a 20% advance payment.</li>
+          <li>Cancellations within 7 days of departure are non-refundable.</li>
+          <li>Packages are subject to availability and may change without notice.</li>
+          <li>Travel insurance is recommended for all participants.</li>
+        </ul>
+      </div>
+  
+      <!-- Recommended Packages Section -->
+      <div class="mt-5">
+        <h3>Recommended Packages</h3>
+        <div class="row">
+          <div *ngFor="let recommendedPackage of recommendedPackages" class="col-md-4 mb-3">
+            <div class="card">
+              <img [src]="recommendedPackage.image" class="card-img-top" alt="{{ recommendedPackage.name }}">
+              <div class="card-body">
+                <h5 class="card-title">{{ recommendedPackage.name }}</h5>
+                <p class="card-text">{{ recommendedPackage.description }}</p>
+                <a (click)="scrollToTopAndNavigate(recommendedPackage.id)" class="btn btn-primary">View Details</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  
+    <ng-template #loading>
+      <div class="text-center">
+        <p>Loading package details...</p>
+      </div>
+    </ng-template>
+  </div>
+  

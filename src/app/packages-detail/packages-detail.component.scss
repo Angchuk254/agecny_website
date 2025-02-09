@@ -1,0 +1,61 @@
+.carousel-inner img {
+    object-fit: cover;
+    height: 400px;
+  }
+
+  .package-details-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .package-details-card:hover {
+    box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .package-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+
+  .package-description {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+  }
+
+  .package-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e74c3c;
+  }
+
+  .book-now-btn {
+    background-color: #e74c3c;
+    border: none;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .book-now-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+  }
+
+  // .carousel-control-prev-icon,
+  // .carousel-control-next-icon {
+  //   background-color: #e74c3c;
+  // }
+
+  .recommended-packages .card {
+    margin-bottom: 20px;
+  }
+
+  .recommended-packages .card-img-top {
+    height: 250px;
+    object-fit: cover;
+  }

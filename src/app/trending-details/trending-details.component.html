@@ -1,0 +1,22 @@
+<div class="container-fluid p-0" *ngIf="placeDetails">
+   
+    <img [src]="placeDetails.image" class="img-fluid bannerIMg" alt="{{ placeDetails.name }}">
+   <div class="container mt-md-4">
+    <h3>{{ placeDetails.name }}</h3>
+    <p>{{ placeDetails.description }}</p>
+    <h5>{{placeDetails.subTitle}}</h5>
+    <p>{{placeDetails.subtitlePara}}</p>
+    <h5>{{placeDetails.megaPara}}</h5>
+    <p>{{placeDetails.legendPara}}</p>
+    <h5>{{placeDetails.secinPara}}</h5>
+    <p>{{placeDetails.sectionpara}}</p>
+    <h5>{{placeDetails.listheading}}</h5>
+    <p>{{placeDetails.listPara}}</p>
+    <li><strong>{{placeDetails.listStyle}}</strong></li>
+    <li><strong>{{placeDetails.listStyle2}}</strong></li>
+    <li><strong>{{placeDetails.listStyle3}}</strong></li>
+    <br>
+    <p>{{placeDetails.consclusion}}</p>
+   </div>
+  </div>
+  

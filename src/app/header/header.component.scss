@@ -1,0 +1,14 @@
+
+
+#notification{
+    background-color: #222;
+    color: #fff;
+}
+.cursor{
+   cursor: pointer;
+}
+li a.active {
+    color: #ff9900; /* Change to your desired active color */
+    font-weight: bold; /* Optional: make the active link bold */
+    border-bottom: 2px solid #ff9900; /* Optional: add a bottom border for an active effect */
+  }

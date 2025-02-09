@@ -1,0 +1,56 @@
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+      <!-- First Row: Contact Info -->
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <p class="text">Email: <a href="mailto:info@soulofladakh.com" class="text-white"> info&#64;soulofladakh.com</a></p>
+          <p class="text">Phone: +91 95964 21868</p>
+          <p class="text">Phone: +91 94698 91624</p>
+        </div>
+       
+
+        <!-- Second Row: Quick Links -->
+        <div class="col-md-4 quciLInk">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a [routerLink]="['/about-us']"  routerLinkActive="active" class="text-white">About Us</a></li>
+            <li><a [routerLink]="['/packages']" routerLinkActive="active"  class="text-white">Packages</a></li>
+            <li><a [routerLink]="['/blogs']" routerLinkActive="active" class="text-white">Blogs</a></li>
+            <li><a [routerLink]="['/gallery']"  routerLinkActive="active" class="text-white">Gallery</a></li>
+            <li><a [routerLink]="['/contact']" routerLinkActive="active" class="text-white">Contact</a></li>
+            <!-- <li><a [routerLink]="['/packages']" class="text-white">Privacy Policy</a></li> -->
+          </ul>
+        </div>
+  
+        <!-- Third Row: Social Media -->
+        <div class="col-md-4">
+          <h5>Follow Us</h5>
+          <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank" class="btn btn-outline-light btn-sm mx-2"><i class="bi bi-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com" target="_blank" class="btn btn-outline-light btn-sm mx-2"><i class="bi bi-facebook"></i> Facebook</a>
+            <a href="mailto:info@soulofladakh.com" class="btn btn-outline-light btn-sm mx-2"><i class="bi bi-envelope"></i> Email</a>
+          </div>
+          <h5 class="mt-5">Review Us</h5>
+          <div class="stars d-flex  align-items=center">
+           
+            <h5 class="mx-3 googletext">
+              <span class="google-text" (click)="openGoogleMaps()">Google</span>
+            </h5>
+            
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <!-- <i class="fa-solid fa-star"></i> -->
+          </div>
+        </div>
+      </div>
+  
+      <!-- Copyright Section -->
+      <div class="mt-4">
+        <p class="text-muted">© 2025 Aryan Ladakh Bike Rentals. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  

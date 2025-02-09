@@ -1,0 +1,13 @@
+
+#heroCarousel{
+    .carouselIMgae{
+        height: 500px;
+    }
+}
+
+
+@media screen and (max-width:600px){
+    #heroCarousel .carouselIMgae {
+        height: 349px;
+    }
+}

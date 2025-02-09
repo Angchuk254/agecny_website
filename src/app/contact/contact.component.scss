@@ -1,0 +1,49 @@
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #3c4a61;
+  }
+  
+  h3 {
+    color: #3c4a61;
+  }
+  
+  .text-center p {
+    font-size: 1.1rem;
+    color: #6c757d;
+  }
+  
+  .map-container {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  form .form-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  
+  form .form-control {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    background-color: #007bff;
+    border-radius: 8px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  footer {
+    background-color: #343a40;
+  }
+  
+  footer .btn {
+    margin: 5px;
+  }
+  
+  footer p {
+    font-size: 1.1rem;
+  }

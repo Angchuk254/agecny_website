@@ -1,0 +1,97 @@
+<div class="container mt-5">
+    <!-- Contact Page Header -->
+    <div class="text-center mb-4">
+      <h1>Get in Touch</h1>
+      <p>We'd love to hear from you. Fill out the form below, and we'll get back to you as soon as possible.</p>
+    </div>
+  
+    <!-- Contact Form Section -->
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Contact Form</h3>
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              class="form-control" 
+              name="name" 
+              [(ngModel)]="contact.name" 
+              #name="ngModel" 
+              required 
+              minlength="3"
+            />
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+              <div *ngIf="name.errors?.['required']">Name is required.</div>
+              <div *ngIf="name.errors?.['minlength']">Name must be at least 3 characters long.</div>
+            </div>
+          </div>
+          
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              class="form-control" 
+              name="email" 
+              [(ngModel)]="contact.email" 
+              #email="ngModel" 
+              required 
+              email
+            />
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+              <div *ngIf="email.errors?.['required']">Email is required.</div>
+              <div *ngIf="email.errors?.['email']">Please enter a valid email address.</div>
+            </div>
+          </div>
+          
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea 
+              id="message" 
+              class="form-control" 
+              name="message" 
+              [(ngModel)]="contact.message" 
+              #message="ngModel" 
+              required
+            ></textarea>
+            <div *ngIf="message.invalid && (message.dirty || message.touched)" class="text-danger">
+              <div *ngIf="message.errors?.['required']">Message is required.</div>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid">Send Message</button>
+        </form>
+      </div>
+  
+      <!-- Location Section with Map -->
+      <div class="col-md-6">
+        <h3>Our Location</h3>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.755737836797!2d77.57447857584859!3d34.15259081242485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38fdebf01a4bdeef%3A0x883d525316ca17cd!2sAryan%20Ladakh%20Bike%20Rentals!5e0!3m2!1sen!2sin!4v1739023984642!5m2!1sen!2sin" width="100%" height="300"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Additional Contact Info -->
+    <div class="mt-4 text-center">
+      <h4>Contact Us</h4>
+      <p>Email:  info&#64;soulofladakh.com</p>
+      <p>Phone: +91 95964 21868</p>
+    </div>
+  </div>
+  
+  <!-- Optional Footer (social links, etc.) -->
+  <!-- <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>Follow us on:</p>
+    <div>
+     
+     
+      <a href="https://www.instagram.com/share/BAboGl0tho" class="btn btn-outline-light btn-sm mx-2"> <i class="bi bi-instagram"></i></a>
+      <a href="https://www.instagram.com/share/BAboGl0tho" class="btn btn-outline-light btn-sm mx-2"> <i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/share/BAboGl0tho" class="btn btn-outline-light btn-sm mx-2"> <i class="bi bi-envelope"></i></a>
+      <a href="#" class="btn btn-outline-light btn-sm mx-2">Twitter</a>
+    </div>
+  </footer> -->
+  
