@@ -40,6 +40,9 @@ footer {
   a{
     text-decoration: none;
   }
+  a:hover,.google-text:hover{
+    text-decoration: underline;
+  }
 .fa-star{
   color: yellow;
   font-size: 20px;

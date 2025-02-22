@@ -11,13 +11,15 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 
 export const routes: Routes = [
-    {path:'',component: HomeComponent},
-    { path: 'packages', component: PackagesComponent },
-    { path: 'packages/:id', component: PackageDetailComponent },
-    { path: 'contact', component: ContactComponent },
-    { path: 'gallery', component: GalleryComponent },
-    { path: 'about-us', component: AboutUsComponent },
-    { path: 'blogs/:id', component: BlogDetailComponent },
-    { path: 'blogs', component: BlogListComponent },
-    { path: 'trending/:place', component: TrendingDetailsComponent },
-];
+    { path: '', component: HomeComponent },
+    { path: 'packages', loadComponent: () => import('./packages/packages.component').then(m => m.PackagesComponent) },
+    { path: 'packages/:id', loadComponent: () => import('./packages-detail/packages-detail.component').then(m => m.PackageDetailComponent) },
+    { path: 'contact', loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent) },
+    { path: 'gallery', loadComponent: () => import('./gallery/gallery.component').then(m => m.GalleryComponent) },
+    { path: 'about-us', loadComponent: () => import('./about-us/about-us.component').then(m => m.AboutUsComponent) },
+    { path: 'blogs/:id', loadComponent: () => import('./blog-detail/blog-detail.component').then(m => m.BlogDetailComponent) },
+    { path: 'blogs', loadComponent: () => import('./blog-list/blog-list.component').then(m => m.BlogListComponent) },
+    { path: 'trending/:place', loadComponent: () => import('./trending-details/trending-details.component').then(m => m.TrendingDetailsComponent) },
+    { path: '**', redirectTo: '', pathMatch: 'full' }
+  ];
+  

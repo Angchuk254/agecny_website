@@ -1,0 +1,33 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - Web-React  # Or whichever branch you want to trigger the deploy
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # You can change this to whatever Node version you're using
+
+    - name: Install dependencies
+      run: |
+        npm install
+        npm run build --prod
+
+    - name: Deploy to Hostinger (FTP)
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        server: ${{ secrets.HOSTINGER_FTP_SERVER }}
+        username: ${{ secrets.HOSTINGER_FTP_USER }}
+        password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+        local-dir: ./dist/thnlas_agecny  # The path to your dist folder
+        remote-dir: /public_html  # Path to the public directory on Hostinger
+

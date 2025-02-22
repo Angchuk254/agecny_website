@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-trending-details',
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink],
   templateUrl: './trending-details.component.html',
   styleUrl: './trending-details.component.scss',
 })

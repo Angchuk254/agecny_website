@@ -3,7 +3,49 @@
     width: 100%;
 }
 
-
+.latest-happening {
+    background-image: url('/assets/pexels-julia-volk-5201944.jpg'); /* You can replace this with any image you like */
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    color: white;
+  
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5); /* Optional: gives a dark overlay for text readability */
+      border-radius: 10px;
+  
+      h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+  
+      p {
+        font-size: 1.25rem;
+        margin-bottom: 20px;
+      }
+  
+      .cta-button {
+        background-color: #ff6f61;
+        color: white;
+        padding: 12px 25px;
+        font-size: 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #e24d44;
+        }
+      }
+    }
+  }
+  
 @media screen and (max-width:600px){
     .bannerIMg {
         height: 349px;

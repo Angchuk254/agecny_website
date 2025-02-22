@@ -9,12 +9,12 @@ declare var bootstrap: any;
 })
 export class GalleryComponent {
   galleryImages = [
-    { title: 'Magnetic Hill', src: '/assets/pexels-janamparikh-17033866.jpg' },
-    { title: 'Pangong Lake', src: '/assets/pexels-julia-volk-5202118.jpg' },
-    { title: 'Shanti Stupa', src: '/assets/pexels-julia-volk-5204433.jpg' },
-    { title: 'Tso Moriri', src: '/assets/pexels-estudiodelarts-10841375.jpg' },
-    { title: 'Nubra Valley', src: '/assets/pexels-avinashpatel-688576.jpg' },
-    { title: 'Zanskar River', src: '/assets/pexels-julia-volk-5202070.jpg' }
+    { title: 'Diskit Monestary', src: '/assets/pexels-janamparikh-17033866.jpg' },
+    { title: 'Samgam Point', src: '/assets/pexels-julia-volk-5202118.jpg' },
+    { title: 'Changthang', src: '/assets/pexels-julia-volk-5204433.jpg' },
+    { title: 'Sham Valley', src: '/assets/pexels-estudiodelarts-10841375.jpg' },
+    { title: 'Tsomo riri', src: '/assets/pexels-avinashpatel-688576.jpg' },
+    { title: 'Zanskar Range', src: '/assets/pexels-julia-volk-5202070.jpg' }
   ];
 
   selectedImage: { title: string, src: string } | null = null;

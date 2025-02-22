@@ -23,9 +23,34 @@
       <span class="carousel-control-next-icon"></span>
     </button>
   </div>
+
+
+  <!-- para description  -->
+
+<div class="sectionDescription container mt-4 mb-2">
+  <div class="row">
+    <div class="col-md-6 col-12">
+      <h5 class="headtile">Explore Ladakh with the Best  Ladakh Aryan Tours & Travels</h5>
+      <p class="subtitle">Discover the raw beauty of Ladakh with our <strong>expert-guided tours and adventure activities!</strong> Whether you’re seeking thrilling <strong>treks, bike trips, river rafting, camping, or cultural experiences</strong>, we organize customized Ladakh tour packages that cater to all travelers. From the breathtaking Pangong Lake and Nubra Valley to the high passes of Khardung La, we ensure an unforgettable journey.</p>
+    </div>
+    <div class="col-md-6 col-12 d-none d-md-block">
+      <div class="grid">
+        <div class="grid-item1"></div>
+        <div class="grid-item2"></div>
+        <div class="grid-item3"></div>
+        <div class="grid-item4"></div>
+        <div class="grid-item5"></div>
+        <div class="grid-item6"></div>
+        <div class="grid-item7"></div>
+        <div class="grid-item8"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
   
   <!-- Top Destinations Section -->
-  <div class="container mt-5">
+  <div class="container mt-2 ">
     <h3 class="text-center">Top Destinations</h3>
     <div class="row">
       <div class="col-md-4 pt-3" *ngFor="let destination of destinations">
@@ -34,7 +59,7 @@
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">{{ destination.name }}</h5>
             <p class="card-text flex-grow-1">{{ destination.description }}</p>
-            <a [routerLink]="['/packages/']" class="btn btn-primary mt-auto">View Packages</a>
+            <button class="btn btn-primary mt-auto" [routerLink]="['/packages']" routerLinkActive="active" >View</button>
           </div>
         </div>
       </div>
@@ -42,8 +67,19 @@
     </div>
   </div>
   
+  <div class="container-fluid mt-4 mb-2" style="background-color: beige;">
+    <div class="container ">
+      <div class="row">
+        <div class="col-12 p-2">
+          <h5 class="text-center">Explore Ladakh – Adventure, Culture & Unforgettable Journeys</h5>
+          <p>Whether you're craving thrilling road trips, high-altitude treks, serene monastery tours, or camping by Pangong Lake, we organize unforgettable adventures tailored just for you. Ride through the world’s highest passes, witness Ladakh’s stunning landscapes, and immerse yourself in its rich culture. From Nubra Valley’s sand dunes to the majestic Khardung La, every journey with us is packed with excitement and authenticity. Book your Ladakh tour package today and turn your travel dreams into reality!</p>
+          <div class="d-flex justify-content-center "><button class="btn btn-primary mt-auto" [routerLink]="['/packages']" routerLinkActive="active" >View Packages</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Top Trending Places -->
-  <div class="container mt-5">
+  <div class="container mt-2">
     <h3 class="text-center">Trending Places</h3>
     <div class="row">
       <div class="col-md-4" *ngFor="let place of trendingPlaces">
@@ -52,11 +88,50 @@
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">{{ place.name }}</h5>
             <p class="card-text flex-grow-1">{{ place.description }}</p>
-            <a [routerLink]="['/trending', place.name.toLowerCase()]" class="btn btn-primary mt-auto">View</a>
+            <button class="btn btn-primary mt-auto"[routerLink]="['/trending', place.name.toLowerCase()]" routerLinkActive="active" >View </button>
+           
           </div>
         </div>
       </div>
     </div>
   </div>
   
-  
+  <div class="container-fluid p-0 mt-4 ">
+    <section class="feature-section">
+      <div class="container">
+          <h2 class="mb-4 ">Our Travel Services</h2>
+          <div class="row">
+              <div class="col-md-4 feature-box d-none d-md-block">
+                  <i class="fa-solid fa-plane icon"></i>
+                  <h4>Flight Bookings</h4>
+                  <p>Get the best deals on flights with our seamless booking experience.</p>
+              </div>
+              <div class="col-md-4 feature-box">
+                  <i class="fa-solid fa-hotel icon"></i>
+                  <h4>Hotel Reservations</h4>
+                  <p>Stay in top-rated hotels at exclusive prices for an unforgettable trip.</p>
+              </div>
+              <div class="col-md-4 feature-box">
+                  <i class="fa-solid fa-route icon"></i>
+                  <h4>Tour Packages</h4>
+                  <p>Explore customized travel packages tailored to your adventure.</p>
+              </div>
+              <div class="col-md-4 feature-box">
+                  <i class="fa-solid fa-taxi icon"></i>
+                  <h4>Taxi Services</h4>
+                  <p>Convenient and affordable taxi services for hassle-free travel.</p>
+              </div>
+              <div class="col-md-4 feature-box">
+                  <i class="fa-solid fa-hiking icon"></i>
+                  <h4>Trekking Tours</h4>
+                  <p>Experience breathtaking treks with expert-guided tours.</p>
+              </div>
+              <div class="col-md-4 feature-box">
+                  <i class="fa-solid fa-theater-masks icon"></i>
+                  <h4>Cultural Activities</h4>
+                  <p>Immerse yourself in local traditions and cultural events.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  </div>

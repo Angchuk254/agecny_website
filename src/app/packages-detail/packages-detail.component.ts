@@ -20,14 +20,16 @@ export class PackageDetailComponent implements OnInit {
       name: 'Camping in Ladakh',
       description: 'Experience camping under the starry sky.',
       price: '₹10,000',
-      image: '/assets/pexels-avinashpatel-688576.jpg'
+      image: '/assets/pexels-avinashpatel-688576.jpg',
+      url:'4'
     },
     {
       id: '3',
       name: 'Rafting Adventure',
       description: 'Enjoy thrilling rafting experiences in Ladakh.',
       price: '₹8,000',
-      image: '/assets/pexels-gauravdeswal99-17365233.jpg'
+      image: '/assets/pexels-gauravdeswal99-17365233.jpg',
+        url:'3'
     }
   ];
 
@@ -41,13 +43,11 @@ export class PackageDetailComponent implements OnInit {
     });
    
   }
-  scrollToTopAndNavigate(packageId: string) {
-    // Scroll to top of the page
-    window.scrollTo(0, 0);
-
-    // Navigate to the package detail route
-    this.router.navigate(['/packages/6']);
+  scrollToTopAndNavigate(packageUrl: string) {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+    this.router.navigate(['/packages', packageUrl]);  // Navigate using package URL
   }
+  
   loadPackageDetails() {
     window.scrollBy(0, 0);
     // Simulate fetching data for the package using this.packageId
