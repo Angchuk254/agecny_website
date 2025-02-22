@@ -1,33 +1,29 @@
-name: Deploy to Hostinger
+name: Generate a build and push to another branch
 
 on:
   push:
     branches:
-      - Web-React  # Or whichever branch you want to trigger the deploy
+      - main # The branch name your are commit the new changes
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Build and Push
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: git-checkout
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'  # You can change this to whatever Node version you're using
+      - name: Install all dependencies
+        run: npm install
 
-    - name: Install dependencies
-      run: |
-        npm install
-        npm run build --prod
+      - name: Build
+        run: npm run build # The build command of your project
 
-    - name: Deploy to Hostinger (FTP)
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
-      with:
-        server: ${{ secrets.HOSTINGER_FTP_SERVER }}
-        username: ${{ secrets.HOSTINGER_FTP_USER }}
-        password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-        local-dir: ./dist/thnlas_agecny  # The path to your dist folder
-        remote-dir: /public_html  # Path to the public directory on Hostinger
-
+      - name: Push
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: Web-React # The branch name where you want to push the assets
+          FOLDER: Web-React # The directory where your assets are generated
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+          MESSAGE: "Build: ({sha}) {msg}" # The commit message

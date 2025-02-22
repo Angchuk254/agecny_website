@@ -58,61 +58,6 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
-```
-thnlas_agecny
-├─ .angular
-├─ .editorconfig
-├─ .gitignore
-├─ angular.json
-├─ package-lock.json
-├─ package.json
-├─ public
-│  └─ favicon.ico
-├─ README.md
-├─ src
-│  ├─ app
-│  │  ├─ app.component.html
-│  │  ├─ app.component.scss
-│  │  ├─ app.component.spec.ts
-│  │  ├─ app.component.ts
-│  │  ├─ app.config.ts
-│  │  ├─ app.routes.ts
-│  │  ├─ header
-│  │  │  ├─ header.component.html
-│  │  │  ├─ header.component.scss
-│  │  │  ├─ header.component.spec.ts
-│  │  │  └─ header.component.ts
-│  │  ├─ home
-│  │  │  ├─ home.component.html
-│  │  │  ├─ home.component.scss
-│  │  │  ├─ home.component.spec.ts
-│  │  │  └─ home.component.ts
-│  │  └─ packages
-│  │     ├─ packages.component.html
-│  │     ├─ packages.component.scss
-│  │     ├─ packages.component.spec.ts
-│  │     └─ packages.component.ts
-│  ├─ assets
-│  │  ├─ pexels-avinashpatel-688576.jpg
-│  │  ├─ pexels-estudiodelarts-10841375.jpg
-│  │  ├─ pexels-gauravdeswal99-17365233.jpg
-│  │  ├─ pexels-janamparikh-17033866.jpg
-│  │  ├─ pexels-julia-volk-5201468.jpg
-│  │  ├─ pexels-julia-volk-5201944.jpg
-│  │  ├─ pexels-julia-volk-5202070.jpg
-│  │  ├─ pexels-julia-volk-5202118.jpg
-│  │  ├─ pexels-julia-volk-5204433.jpg
-│  │  ├─ pexels-julia-volk-5205010.jpg
-│  │  ├─ pexels-julia-volk-6576294.jpg
-│  │  ├─ pexels-navraj-pradhan-511329-1242983.jpg
-│  │  ├─ pexels-shashank-879434.jpg
-│  │  └─ pexels-shashank-960219.jpg
-│  ├─ index.html
-│  ├─ main.ts
-│  └─ styles.scss
-├─ tsconfig.app.json
-├─ tsconfig.json
-└─ tsconfig.spec.json
 
 ```
 
