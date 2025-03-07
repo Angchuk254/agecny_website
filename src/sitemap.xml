@@ -1,16 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+          http://www.sitemaps.org/schemas/sitemap.xsd">
 
+    <!-- Home Page -->
+    <url>
+        <loc>https://soulofladakh.com/</loc>
+        <lastmod>2025-03-07T10:25:22+00:00</lastmod>
+        <priority>1.0</priority>
+    </url>
 
-<url>
-  <loc>https://soulofladakh.com/</loc>
-  <lastmod>2025-02-17T09:32:28+00:00</lastmod>
-</url>
+    <!-- Shop Page -->
+    <url>
+        <loc>https://soulofladakh.com/packages</loc>
+        <lastmod>2025-03-07T10:25:22+00:00</lastmod>
+        <priority>0.9</priority>
+    </url>
 
+    <!-- Product Pages (Add dynamically if possible) -->
+    <url>
+        <loc>https://soulofladakh.com/about-us</loc>
+        <lastmod>2025-03-07T10:25:22+00:00</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://soulofladakh.com/gallery</loc>
+        <lastmod>2025-03-07T10:25:22+00:00</lastmod>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- About Page -->
+    <url>
+        <loc>https://soulofladakh.com/blogs</loc>
+        <lastmod>2025-03-07T10:25:22+00:00</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Contact Page -->
+    <url>
+        <loc>https://soulofladakh.com/contact</loc>
+        <lastmod>2025-03-07T10:25:22+00:00</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+  
 
 </urlset>
