@@ -1,4 +1,19 @@
-<div class="container-fluid p-0">
+<main class="position-relative  ">
+ <div class="innerNavabr position-fixed z-index-1 text-bg-primary">
+  <div class="socialsLinnk  container">
+    <div class="d-flex justify-content-between p-1 ">
+      <div class="scoail d-flex justify-content-evenly"> 
+        <div class="insta"><a class="text-white" target="_blank" href="https://www.instagram.com/share/BAboGl0tho"><i class="bi bi-instagram"></i></a></div>
+        <div class="insta mx-5 "><i class="bi bi-whatsapp"></i></div>
+        <div class="insta "><a href="mailto:info@soulofladakh.com" class="text-white"> <i class="bi bi-envelope"></i></a></div>
+        <!-- <div class="insta"><i class="bi bi-envelope"></i></div> -->
+      </div>
+      <div class="callOption">
+        <div class="insta" (click)="callNumber('+919876543210')"><i class="bi bi-telephone"></i> &nbsp;+91 95964 21868</div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="#">Ladakh Aryan Tours & Travels</a>
@@ -13,17 +28,26 @@
           </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" routerLink="/"   data-bs-dismiss="offcanvas">HOME</a></li>
-              <li class="nav-item"><a class="nav-link" [routerLink]="['/packages']" routerLinkActive="active" data-bs-dismiss="offcanvas">PACKAGES</a></li>
-              <li class="nav-item"><a class="nav-link" [routerLink]="['/about-us']" routerLinkActive="active" data-bs-dismiss="offcanvas">ABOUT US</a></li>
-              <li class="nav-item"><a class="nav-link" [routerLink]="['/gallery']" routerLinkActive="active" data-bs-dismiss="offcanvas">GALLERY</a></li>
-              <li class="nav-item"><a class="nav-link" [routerLink]="['/blogs']" routerLinkActive="active" data-bs-dismiss="offcanvas">BLOGS</a></li>
-              <li class="nav-item"><a class="nav-link" [routerLink]="['/contact']" routerLinkActive="active" data-bs-dismiss="offcanvas">CONTACT</a></li>
+              <li class="nav-item"><a class="nav-link" routerLink="/" data-bs-dismiss="offcanvas">HOME</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLink]="['/packages']" routerLinkActive="active"
+                  data-bs-dismiss="offcanvas">PACKAGES</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLink]="['/about-us']" routerLinkActive="active"
+                  data-bs-dismiss="offcanvas">ABOUT US</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLink]="['/gallery']" routerLinkActive="active"
+                  data-bs-dismiss="offcanvas">GALLERY</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLink]="['/blogs']" routerLinkActive="active"
+                  data-bs-dismiss="offcanvas">BLOGS</a></li>
+              <li class="nav-item"><a class="nav-link" [routerLink]="['/contact']" routerLinkActive="active"
+                  data-bs-dismiss="offcanvas">CONTACT</a></li>
               <div class="d-flex justify-content-evenly mt-5">
-                <li class="nav-item d-md-none d-block">   <a class="nav-link" href="https://www.instagram.com/share/BAboGl0tho" target="_blank" ><i class="bi bi-instagram"></i> </a></li>
-              <li class="nav-item d-md-none d-block"><a class="nav-link" href="https://www.instagram.com/share/BAboGl0tho" target="_blank" ><i class="bi bi-facebook"></i> </a>
-               </li>
-               <li class="nav-item d-md-none d-block"> <a class="nav-link" href="mailto:info@soulofladakh.com" ><i class="bi bi-envelope"></i> </a></li>
+                <li class="nav-item d-md-none d-block"> <a class="nav-link"
+                    href="https://www.instagram.com/share/BAboGl0tho" target="_blank"><i class="bi bi-instagram"></i> </a>
+                </li>
+                <li class="nav-item d-md-none d-block"><a class="nav-link"
+                    href="https://www.instagram.com/share/BAboGl0tho" target="_blank"><i class="bi bi-facebook"></i> </a>
+                </li>
+                <li class="nav-item d-md-none d-block"> <a class="nav-link" href="mailto:info@soulofladakh.com"><i
+                      class="bi bi-envelope"></i> </a></li>
               </div>
             </ul>
           </div>
@@ -31,4 +55,5 @@
       </div>
     </nav>
   </div>
-  
+ </div>
+</main>

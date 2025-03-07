@@ -1,17 +1,42 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { BlogService } from '../blog.service';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink,CommonModule],
+  imports: [RouterLink, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
-  constructor(){
+export class HomeComponent implements OnInit, AfterViewInit {
+  constructor(private blogService: BlogService){
     window.scrollTo(0,0)
   }
+  blogs: any[] = [];
+
+  ngOnInit(): void {
+    this.blogService.getBlogs().subscribe((data) => {
+      this.blogs = data;
+    });
+  }
+
+  ngAfterViewInit(): void {
+    this.startAutoSlide();
+  }
+
+  startAutoSlide(): void {
+    setInterval(() => {
+      const carousel = document.querySelector('.blog-carousel') as HTMLElement;
+      if (carousel) {
+        carousel.scrollBy({ left: 300, behavior: 'smooth' });
+        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+          carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        }
+      }
+    }, 3000); // Adjust speed as needed
+  }
+
   destinations = [
     { id: 1, name: 'Pangong Lake', image: '/assets/pexels-shashank-960219.jpg', description: 'A stunning high-altitude lake.' },
     { id: 2, name: 'Nubra Valley', image: '/assets/pexels-janamparikh-17033866.jpg', description: 'Famous for sand dunes and monasteries.' },
@@ -26,5 +51,4 @@ export class HomeComponent {
     { name: 'Tso Moriri: Ladakh’s Hidden Gem of Serenity and Solitude', image: '/assets/pexels-nishantvy-5784209.jpg', description: 'A breathtaking high-altitude lake.' },
     { name: 'Shanti Stupa', image: '/assets/pexels-shalenderkumar-6650419.jpg', description: 'A peaceful Buddhist stupa with stunning views.' }
   ];
-
 }

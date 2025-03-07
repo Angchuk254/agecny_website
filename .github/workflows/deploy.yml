@@ -1,0 +1,49 @@
+name: Angular CI/CD Deployment to Hostinger
+
+on:
+  push:
+    branches:
+      - main  # Runs when code is pushed to main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build Angular App
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Angular App
+        run: npm run build -- --configuration=production
+
+      - name: Set Git User
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Push Build to Web-React Branch
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: Web-React  # Branch where build files will be stored
+          FOLDER: dist/thnlas_agecny  # Replace with actual Angular app folder in dist
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MESSAGE: "Build: ({sha}) {msg}"
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    name: Deploy to Hostinger (FTP)
+    steps:
+      - name: Install LFTP
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Upload Files via FTP
+        run: |
+          lftp -c "
+          open -u ${{u708418054 }},${{ Igotnewshirt#254 }} ftp.soulofladakh.com;
+          mirror -R dist/thnlas_agecny /public_html;
+          bye"

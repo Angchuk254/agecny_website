@@ -6,3 +6,16 @@ body{
     font-family: "Montserrat", serif !important;
     background-color: #fff;
 }
+.setter{
+    margin-top: 10%;
+}
+@media screen and (max-width:768px){
+    .setter{
+        margin-top: 20%;
+    }
+}
+@media screen and (max-width:600px){
+    .setter{
+        margin-top: 30%;
+    }
+}

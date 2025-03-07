@@ -8,5 +8,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-
+  callNumber(phoneNumber: string) {
+    window.location.href = `tel:${phoneNumber}`;
+   
+  }
 }

@@ -28,6 +28,10 @@ export class BlogDetailComponent implements OnInit {
 
       // Get latest blogs (sorted by date)
       this.latestBlogs = [...blogs].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 5);
+console.log(this.latestBlogs.forEach(element => {
+  console.log(element.id);   
+}
+));
 
       // Get trending blogs (hardcoded or based on popularity)
       this.trendingBlogs = blogs.slice(0, 5); // Replace with real trending logic

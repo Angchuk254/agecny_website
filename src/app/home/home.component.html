@@ -79,7 +79,7 @@
     </div>
   </div>
   <!-- Top Trending Places -->
-  <div class="container mt-2">
+  <div class="container mt-5">
     <h3 class="text-center">Trending Places</h3>
     <div class="row">
       <div class="col-md-4" *ngFor="let place of trendingPlaces">
@@ -95,6 +95,51 @@
       </div>
     </div>
   </div>
+  <div class="fighterSpace mt-5" style="  background: linear-gradient(to bottom, #4682B4, #87CEEB, #D2B48C, #8B4513);">
+    <div class="coantiner-fluid">
+      <div class="container p-md-5 p-3">
+        <div class="row">
+          <div class="col-12">
+            <h3>Discover Ladakh – Your Ultimate Travel Partner for an Unforgettable Himalayan Adventure</h3>
+            <p>Embark on an extraordinary journey to Ladakh, the "Land of High Passes," with our expert-guided tours designed for every kind of traveler. As the most trusted travel agency in Ladakh, we specialize in crafting tailor-made Ladakh tour packages that offer the perfect blend of adventure, culture, and breathtaking landscapes. Whether you dream of a thrilling Leh Ladakh bike trip, a serene escape to Pangong Lake, or an offbeat expedition through the rugged beauty of Zanskar Valley, we have you covered.</p>
+            <p>Our Ladakh travel packages include everything from hassle-free transportation and cozy accommodations to immersive cultural experiences, monastery visits, high-altitude trekking, and exciting Ladakh road trips. Explore the stunning landscapes of Nubra Valley, marvel at the pristine blue waters of Tso Moriri Lake, and conquer the world's highest motorable passes like Khardung La and Chang La.</p>
+            <p>With years of experience in Leh Ladakh tourism, we prioritize safety, comfort, and authenticity. Our expert local guides ensure you experience the rich heritage of Ladakh, from ancient monasteries to traditional Ladakhi cuisine. Whether you're a solo traveler, a couple seeking a romantic getaway, or a group looking for an adventurous trip, we customize each tour to match your needs.
+             </p>
+             <p> Book your Ladakh trip today and let us take care of every detail, so you can focus on making memories in one of the most mesmerizing destinations on Earth!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+   
+    <div class="blog-carousel-container p-3">
+      <h2 class="text-center">Latest Blogs</h2>
+      <p class="text-center text-muted">Stay updated with the most exciting stories, tips, and adventures from Ladakh!</p>
+      
+      <div class="blog-carousel" #carousel>
+        <div *ngFor="let blog of blogs" class="blog-card">
+          <img [src]="blog.image" [alt]="blog.title" />
+          <div class="blog-content d-flex flex-column justify-content-between">
+           <div class="styt">
+            <h3>{{ blog.title }}</h3>
+            <p>{{ blog.description }}</p>
+           </div>
+            <div class="d-flex justify-content-between">
+             <div> <a [routerLink]="['/blogs', blog.id]" class="read-more">Read More</a></div>
+            <div class="duration">
+              <span class="timeMake"> <i class="bi bi-calendar-minus p-1"></i>{{blog.date}}</span>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
   
   <div class="container-fluid p-0 mt-4 ">
     <section class="feature-section">
