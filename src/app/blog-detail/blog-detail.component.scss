@@ -14,7 +14,14 @@
     border: none;
     padding: 10px;
   }
-  
+  .bi::before {
+    font-size: 2rem;
+    font-weight: 600;
+    
+}
+.shre {
+  cursor: pointer;
+}
   .list-group-item a {
     text-decoration: none;
     color: #007bff;

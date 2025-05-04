@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BlogService } from '../blog.service';
 
@@ -9,11 +9,14 @@ import { BlogService } from '../blog.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent implements OnInit, AfterViewInit {
-  constructor(private blogService: BlogService){
-    window.scrollTo(0,0)
-  }
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy  {
+  @ViewChild('carousel', { static: false }) carousel!: ElementRef;
   blogs: any[] = [];
+  private intervalId: any;
+
+  constructor(private blogService: BlogService) {
+    window.scrollTo(0, 0);
+  }
 
   ngOnInit(): void {
     this.blogService.getBlogs().subscribe((data) => {
@@ -22,21 +25,42 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.startAutoSlide();
+    setTimeout(() => {
+      this.startInfiniteSlide();
+    }, 2000); // Initial delay before first move
   }
 
-  startAutoSlide(): void {
-    setInterval(() => {
-      const carousel = document.querySelector('.blog-carousel') as HTMLElement;
-      if (carousel) {
-        carousel.scrollBy({ left: 300, behavior: 'smooth' });
-        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
-          carousel.scrollTo({ left: 0, behavior: 'smooth' });
+  startInfiniteSlide(): void {
+    const carouselElement = this.carousel.nativeElement;
+    const scrollStep = carouselElement.clientWidth / 3; // Move 1 blog card at a time
+    const delayBetweenSlides = 2000; // Pause duration before sliding
+
+    this.intervalId = setInterval(() => {
+      carouselElement.scrollBy({ left: scrollStep, behavior: 'smooth' });
+
+      setTimeout(() => {
+        const firstItem = carouselElement.firstElementChild as HTMLElement;
+
+        if (carouselElement.scrollLeft >= firstItem.offsetWidth) {
+          this.moveFirstToLast();
+          carouselElement.scrollLeft -= firstItem.offsetWidth; // Prevent jump
         }
-      }
-    }, 3000); // Adjust speed as needed
+      }, 700); // Allow scrolling to complete before moving elements
+    }, delayBetweenSlides + 1000); // Delay before next slide
   }
 
+  moveFirstToLast(): void {
+    if (this.blogs.length > 0) {
+      const firstItem = this.blogs.shift(); // Remove first item
+      if (firstItem) {
+        this.blogs.push(firstItem); // Add it to the end
+      }
+    }
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.intervalId);
+  }
   destinations = [
     { id: 1, name: 'Pangong Lake', image: '/assets/pexels-shashank-960219.jpg', description: 'A stunning high-altitude lake.' },
     { id: 2, name: 'Nubra Valley', image: '/assets/pexels-janamparikh-17033866.jpg', description: 'Famous for sand dunes and monasteries.' },

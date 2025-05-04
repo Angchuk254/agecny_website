@@ -11,12 +11,12 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 export class PackageDetailComponent implements OnInit {
   packageId: string | null = null;
   packageDetails: any; // This will hold the details of the selected package
-  isPackageNotFound: boolean = false; // Flag to handle package not found error
+  isPackageNotFound: string=''// Flag to handle package not found error
 
   // Sample recommended packages
   recommendedPackages = [
     {
-      id: '2',
+      id: 'Camping-in-Ladakh',
       name: 'Camping in Ladakh',
       description: 'Experience camping under the starry sky.',
       price: '₹10,000',
@@ -24,7 +24,7 @@ export class PackageDetailComponent implements OnInit {
       url:'4'
     },
     {
-      id: '3',
+      id: 'Rafting-Adventure',
       name: 'Rafting Adventure',
       description: 'Enjoy thrilling rafting experiences in Ladakh.',
       price: '₹8,000',
@@ -53,7 +53,7 @@ export class PackageDetailComponent implements OnInit {
     // Simulate fetching data for the package using this.packageId
     const mockPackages = [
       {
-        id: '1',
+        id: 'Pangong-Lake',
         name: 'Pangong Lake',
         description: 'A stunning high-altitude lake.',
         price: '₹15,000',
@@ -70,7 +70,7 @@ export class PackageDetailComponent implements OnInit {
         ]
       },
       {
-        id: '2',
+        id: 'Nubra-Valley',
         name: 'Nubra Valley',
         description: 'Famous for sand dunes and monasteries.',
         price: '₹15,000',
@@ -87,7 +87,7 @@ export class PackageDetailComponent implements OnInit {
         ]
       },
       {
-        id: '3',
+        id: 'Sham-Valley',
         name: 'Sham Valley',
         description: `It's a popular destination for travelers looking for adventure and peace.`,
         price: '₹15,000',
@@ -104,7 +104,7 @@ export class PackageDetailComponent implements OnInit {
         ]
       },
       {
-        id: '4',
+        id: 'Bike-Tour',
         name: 'Bike Tour',
         description: `Ladakh advantarous bike trip.`,
         price: '₹15,000',
@@ -121,7 +121,7 @@ export class PackageDetailComponent implements OnInit {
         ]
       },
       {
-        id: '5',
+        id: 'Camping-in-Ladakh',
         name: 'Camping in Ladakh',
         description: `Experience camping under the starry sky.`,
         price: '₹15,000',
@@ -138,7 +138,7 @@ export class PackageDetailComponent implements OnInit {
         ]
       },
       {
-        id: '6',
+        id: 'Rafting-Adventure',
         name: 'Rafting Adventure',
         description: `Enjoy thrilling rafting experiences in Ladakh.`,
         price: '₹15,000',
@@ -161,8 +161,25 @@ export class PackageDetailComponent implements OnInit {
     // Find the selected package based on ID
     this.packageDetails = mockPackages.find(pkg => pkg.id === this.packageId);
     if (!this.packageDetails) {
-      this.isPackageNotFound = true;
+      this.isPackageNotFound = 'true';
       console.error('Package not found');
+    }
+  }
+  shareContent() {
+    const shareData = {
+      title: 'Check this out!',
+      text: 'Explore Ladakh with the Best Ladakh Aryan Tours & Travels',
+      url: window.location.href,
+    };
+  
+    if (navigator.share) {
+      navigator.share(shareData)
+        .then(() => console.log('Shared successfully'))
+        .catch((error) => console.error('Error sharing:', error));
+    } else {
+      // Fallback for unsupported browsers
+      const shareUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareData.text + ' ' + shareData.url)}`;
+      window.open(shareUrl, '_blank');
     }
   }
 }

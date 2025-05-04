@@ -33,7 +33,12 @@
             <p class="package-description m-0">{{ packageDetails.description }}</p>
             <!-- <p class="package-price"><strong>Price:</strong> {{ packageDetails.price }}</p> -->
             <button class="btn btn-lg btn-primary book-now-btn mt-4" [routerLink]="['/contact']">Book Now</button>
+
+            <div class="shre p-2 ">
+              <i class="bi bi-share" (click)="shareContent()"></i>
+            </div>
           </div>
+         
         </div>
       </div>
   

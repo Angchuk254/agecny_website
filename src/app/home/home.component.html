@@ -112,33 +112,34 @@
     </div>
   </div>
 
-<div class="container">
-  <div class="row">
-   
-    <div class="blog-carousel-container p-3">
-      <h2 class="text-center">Latest Blogs</h2>
-      <p class="text-center text-muted">Stay updated with the most exciting stories, tips, and adventures from Ladakh!</p>
-      
-      <div class="blog-carousel" #carousel>
-        <div *ngFor="let blog of blogs" class="blog-card">
-          <img [src]="blog.image" [alt]="blog.title" />
-          <div class="blog-content d-flex flex-column justify-content-between">
-           <div class="styt">
-            <h3>{{ blog.title }}</h3>
-            <p>{{ blog.description }}</p>
-           </div>
-            <div class="d-flex justify-content-between">
-             <div> <a [routerLink]="['/blogs', blog.id]" class="read-more">Read More</a></div>
-            <div class="duration">
-              <span class="timeMake"> <i class="bi bi-calendar-minus p-1"></i>{{blog.date}}</span>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="blog-carousel-container p-3">
+        <h2 class="text-center">Latest Blogs</h2>
+        <p class="text-center text-muted">Stay updated with the most exciting stories, tips, and adventures from Ladakh!</p>
+  
+        <div class="blog-carousel" #carousel>
+          <div *ngFor="let blog of blogs" class="blog-card">
+            <img [src]="blog.image" [alt]="blog.title" />
+            <div class="blog-content d-flex flex-column justify-content-between">
+              <div>
+                <h3>{{ blog.title }}</h3>
+                <p>{{ blog.description }}</p>
+              </div>
+              <div class="d-flex justify-content-between">
+                <a [routerLink]="['/blogs', blog.id]" class="read-more">Read More</a>
+                <span class="timeMake">
+                  <i class="bi bi-calendar-minus p-1"></i>{{ blog.date }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  
+  
   
   
   <div class="container-fluid p-0 mt-4 ">

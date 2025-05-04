@@ -43,4 +43,6 @@ console.log(this.latestBlogs.forEach(element => {
       ];
     });
   }
+
+  
 }

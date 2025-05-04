@@ -10,8 +10,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class AboutUsComponent implements OnInit{
   teamMembers = [
-    { name: 'Thinlas', role: 'Founder', image: '/assets/thinals.jpeg', description: 'Founder of the agency, passionate about travel and adventure.' },
-    { name: 'Sinagy', role: 'Tour Specialist', image: '/assets/singay.jpeg', description: 'Expert in curating personalized travel experiences.' },
+    { name: 'Thinlas', role: 'Founder', image: '/assets/thinals.jpeg',email:"thinlas@soulofladakh.com", description: 'Founder of the agency, passionate about travel and adventure.' },
+    { name: 'Sinagy', role: 'Tour Specialist', image: '/assets/singay.jpeg',email:"singay@soulofladakh.com", description: 'Expert in curating personalized travel experiences.' },
     // { name: 'James Brown', role: 'Marketing Head', image: '/assets/team3.jpg', description: 'Creative mind behind our branding and campaigns.' }
   ];
   constructor() {
